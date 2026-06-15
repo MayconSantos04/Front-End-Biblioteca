@@ -3,18 +3,22 @@
 @theme {
   --color-*: initial;
 
+  --color-base-primary: #FCFCFC;
+
+  --color-blue: #4180AB;
+  --color-blue-secondary: #8AB3CF;
+
   --color-white: #ffffff;
   --color-gray-100: #535151;
   --color-gray-300: #939090;
 
-  --color-blue-base: #4180AB;
-  --color-blue-secondary: #8AB3CF;
-
-  --color-green-base: #59FF7D;
+  --color-green-base: #B0FFC1;
   --color-green-secondary: #53AD66;
+  --color-green-border: #91FFA9;
 
-  --color-red-base: #FF8486;
+  --color-red-base: #FBD5D6;
   --color-red-secondary: #FF575A;
+  --color-red-border: #FFC1C2;
 
   --font-sans: "Plus Jakarta Sans", sans-serif;
 }
