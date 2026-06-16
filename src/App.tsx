@@ -2,8 +2,9 @@ import Text from "./components/Text";
 import Badge from "./components/Badge";
 import Search from "./assets/icons/Search.svg?react";
 import Icon from "./components/Icon";
-import Plus from "./assets/icons/plus.svg?react"
-import Pen from "./assets/icons/pen.svg?react"
+import Plus from "./assets/icons/plus.svg?react";
+import Handshake from "./assets/icons/handshake.svg?react";
+import Button from "./components/button";
 
 export default function App() {
   return (
@@ -19,13 +20,20 @@ export default function App() {
       <div className="bg-blue p-10">oi</div>
 
       <div>
-        <Badge variant="secondary" className="border-2 border-red-border">Emprestado</Badge>
-        <Badge variant="primary" className="border-2 border-green-border">Disponível</Badge>
+        <Badge variant="secondary" className="border-2 border-red-border">
+          Emprestado
+        </Badge>
+        <Badge variant="primary" className="border-2 border-green-border">
+          Disponível
+        </Badge>
       </div>
 
       <Icon svg={Search} />
       <Icon svg={Plus} />
-      <Icon svg={Pen} />
+
+      <div>
+        <Button icon={Handshake}>Empréstimos</Button>
+      </div>
     </div>
   );
 }
