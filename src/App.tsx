@@ -9,6 +9,7 @@ import Book from "../src/assets/icons/book.svg?react";
 import ButtonIcon from "./components/Button-icon";
 import Trash from "./assets/icons/trash.svg?react";
 import Pen from "./assets/icons/pen.svg?react";
+import InputText from "./components/Input-text";
 
 export default function App() {
   return (
@@ -46,10 +47,13 @@ export default function App() {
       </div>
 
       <div>
-      <ButtonIcon icon={Trash} variant="primary"/>
-      <ButtonIcon icon={Pen} />
+        <ButtonIcon icon={Trash} variant="primary" />
+        <ButtonIcon icon={Pen} />
       </div>
 
+      <div>
+        <InputText />
+      </div>
     </div>
   );
 }

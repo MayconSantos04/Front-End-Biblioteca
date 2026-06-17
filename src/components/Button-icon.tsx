@@ -10,7 +10,7 @@ export const buttonIconVariants = cva(
         primary: "bg-transparent hover:bg-gray-500",
       },
       size: {
-        sm: "w-6 h-6 p-1 rounded",
+        sm: "w-8 h-8 p-1 rounded",
       },
     },
     defaultVariants: {
