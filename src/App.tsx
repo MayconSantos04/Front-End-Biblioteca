@@ -4,11 +4,15 @@ import Search from "./assets/icons/Search.svg?react";
 import Icon from "./components/Icon";
 import Plus from "./assets/icons/plus.svg?react";
 import Handshake from "./assets/icons/handshake.svg?react";
-import Button from "./components/button";
+import Button from "./components/Button";
+import Book from "../src/assets/icons/book.svg?react";
+import ButtonIcon from "./components/Button-icon";
+import Trash from "./assets/icons/trash.svg?react";
+import Pen from "./assets/icons/pen.svg?react";
 
 export default function App() {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <Text variant="body-text-base" className="text-blue">
         Olá mundo
       </Text>
@@ -31,9 +35,21 @@ export default function App() {
       <Icon svg={Search} />
       <Icon svg={Plus} />
 
-      <div>
-        <Button icon={Handshake}>Empréstimos</Button>
+      <div className="flex items-center gap-3 bg-blue-secondary p-2.5 rounded-3xl">
+        <div>
+          <Button icon={Book}>Livro</Button>
+        </div>
+
+        <div>
+          <Button icon={Handshake}>Empréstimos</Button>
+        </div>
       </div>
+
+      <div>
+      <ButtonIcon icon={Trash} variant="primary"/>
+      <ButtonIcon icon={Pen} />
+      </div>
+
     </div>
   );
 }

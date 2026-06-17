@@ -1,7 +1,7 @@
 import type React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
-export const iconVariants = cva("w-4 h-4", {
+export const iconVariants = cva("w-6 h-6", {
   variants: {
     size: {
       "size-sm": "w-4 h-4",
@@ -9,7 +9,7 @@ export const iconVariants = cva("w-4 h-4", {
     },
   },
   defaultVariants: {
-    size: "size-sm",
+    size: "size-md",
   },
 });
 
