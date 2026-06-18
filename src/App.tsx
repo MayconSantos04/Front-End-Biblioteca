@@ -10,10 +10,12 @@ import ButtonIcon from "./components/Button-icon";
 import Trash from "./assets/icons/trash.svg?react";
 import Pen from "./assets/icons/pen.svg?react";
 import InputText from "./components/Input-text";
+import Card from "./components/Card";
+import Container from "./components/Container";
 
 export default function App() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col">
       <Text variant="body-text-base" className="text-blue">
         Olá mundo
       </Text>
@@ -24,7 +26,7 @@ export default function App() {
       <Text>Olá mundo</Text>
       <div className="bg-blue p-10">oi</div>
 
-      <div>
+      <div className="flex w-2xs">
         <Badge variant="secondary" className="border-2 border-red-border">
           Emprestado
         </Badge>
@@ -36,24 +38,30 @@ export default function App() {
       <Icon svg={Search} />
       <Icon svg={Plus} />
 
-      <div className="flex items-center gap-3 bg-blue-secondary p-2.5 rounded-3xl">
-        <div>
-          <Button icon={Book}>Livro</Button>
+      <Container className="border-2 border-black">
+        <div className="flex flex-col items-center">
+          <div className="md:p-3 flex gap-3 bg-blue-secondary p-2.5 rounded-3xl">
+            <Button className="md:px-10" icon={Book}>
+              Livro
+            </Button>
+
+            <Button className="md:px-10" icon={Handshake}>
+              Empréstimos
+            </Button>
+          </div>
+
+          <div className="flex gap-2">
+            <ButtonIcon icon={Trash} variant="primary" />
+            <ButtonIcon icon={Pen} />
+          </div>
         </div>
 
-        <div>
-          <Button icon={Handshake}>Empréstimos</Button>
-        </div>
-      </div>
+        <InputText className="w-full" />
 
-      <div>
-        <ButtonIcon icon={Trash} variant="primary" />
-        <ButtonIcon icon={Pen} />
-      </div>
-
-      <div>
-        <InputText />
-      </div>
+        <Card size="md" className="w-full">
+          Olá mundo
+        </Card>
+      </Container>
     </div>
   );
 }

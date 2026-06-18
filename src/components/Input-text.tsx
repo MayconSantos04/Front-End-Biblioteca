@@ -4,7 +4,7 @@ import { textVariants } from "./Text";
 
 export const inputTextVariants = cva(
   `
-    border-2 border-solid border-gray-300 focus:border-blue
+    border-1 border-solid border-gray-300 focus:border-blue
     bg-transparent outline-none rounded-2xl text-gray-100 text-sm
     `,
   {
