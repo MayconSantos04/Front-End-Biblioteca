@@ -1,6 +1,7 @@
 import { cva, type VariantProps, cx } from "class-variance-authority";
 import type React from "react";
 import { textVariants } from "./Text";
+import Icon from "./Icon";
 
 export const inputTextVariants = cva(
   `
@@ -22,17 +23,28 @@ export const inputTextVariants = cva(
 interface InputTextProps
   extends
     Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,
-    VariantProps<typeof inputTextVariants> {}
+    VariantProps<typeof inputTextVariants> {
+  icon?: React.ComponentProps<typeof Icon>["svg"];
+}
 
 export default function InputText({
   size,
   className,
+  icon: IconComponent,
   ...props
 }: InputTextProps) {
   return (
-    <input
-      className={cx(inputTextVariants({ size }), textVariants(), className)}
-      {...props}
-    />
+    <div className="relative">
+      {IconComponent && (
+        <Icon
+          svg={IconComponent}
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-2 h-2 fill-gray-300"
+        />
+      )}
+      <input
+        className={cx(inputTextVariants({ size }), textVariants(), className)}
+        {...props}
+      />
+    </div>
   );
 }

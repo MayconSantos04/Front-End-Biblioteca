@@ -3,6 +3,7 @@ import Icon from "./components/Icon";
 import Text from "./components/Text";
 import Badge from "./components/Badge";
 import Button from "./components/Button";
+import Title from "./core-components/component-book/Title";
 import Header from "./core-components/Header";
 import Pen from "./assets/icons/pen.svg?react";
 import Container from "./components/Container";
@@ -13,13 +14,18 @@ import Trash from "./assets/icons/trash.svg?react";
 import Search from "./assets/icons/Search.svg?react";
 import Book from "../src/assets/icons/book.svg?react";
 import Handshake from "./assets/icons/handshake.svg?react";
+import InputSearch from "./core-components/component-book/Input-search";
 
 export default function App() {
   return (
     <div className="flex flex-col">
       <Header />
+      <Container className="flex flex-col gap-3">
+        <Title />
+        <InputSearch />
+      </Container>
 
-      <Text variant="body-text-base" className="text-blue">
+      {/* <Text variant="body-text-base" className="text-blue">
         Olá mundo
       </Text>
       <Text variant="body-text-base" className="text-red-secondary">
@@ -75,7 +81,7 @@ export default function App() {
             </div>
           </div>
         </Card>
-      </Container>
+      </Container> */}
     </div>
   );
 }
