@@ -11,7 +11,8 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-blue hover:bg-blue-secondary",
+        primary: "bg-blue hover:bg-blue-hover",
+        secondary: "bg-transparent",
       },
       size: {
         md: "h-10 px-4",
@@ -43,7 +44,8 @@ export const buttonTextVariants = cva("text-base-primary", {
   variants: {
     variant: {
       primary: "text-base-primary",
-      secondary: "text-blue",
+      secondary: "text-base-primary",
+      tertiary: "text-blue",
     },
   },
   defaultVariants: {
@@ -68,7 +70,7 @@ export default function Button({
       {IconComponent && (
         <Icon
           svg={IconComponent}
-          className={buttonIconVariants({ variant, size })}
+          className={buttonIconVariants({ size })}
         />
       )}
       <Text

@@ -1,18 +1,18 @@
+import Card from "./components/Card";
+import Icon from "./components/Icon";
 import Text from "./components/Text";
 import Badge from "./components/Badge";
-import Search from "./assets/icons/Search.svg?react";
-import Icon from "./components/Icon";
-import Plus from "./assets/icons/plus.svg?react";
-import Handshake from "./assets/icons/handshake.svg?react";
 import Button from "./components/Button";
-import Book from "../src/assets/icons/book.svg?react";
+import Header from "./core-components/Header";
+import Pen from "./assets/icons/pen.svg?react";
+import Container from "./components/Container";
+import InputText from "./components/Input-text";
+import Plus from "./assets/icons/plus.svg?react";
 import ButtonIcon from "./components/Button-icon";
 import Trash from "./assets/icons/trash.svg?react";
-import Pen from "./assets/icons/pen.svg?react";
-import InputText from "./components/Input-text";
-import Card from "./components/Card";
-import Container from "./components/Container";
-import Header from "./core-components/Header";
+import Search from "./assets/icons/Search.svg?react";
+import Book from "../src/assets/icons/book.svg?react";
+import Handshake from "./assets/icons/handshake.svg?react";
 
 export default function App() {
   return (
@@ -42,7 +42,6 @@ export default function App() {
       <Icon svg={Plus} />
 
       <Container className="border-2 border-black">
-        
         <div className="flex flex-col items-center">
           <div className="md:p-3 flex gap-3 bg-blue-secondary p-2.5 rounded-3xl">
             <Button className="md:px-10 md:py-6" icon={Book}>
