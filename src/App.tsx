@@ -15,6 +15,7 @@ import Search from "./assets/icons/Search.svg?react";
 import Book from "../src/assets/icons/book.svg?react";
 import Handshake from "./assets/icons/handshake.svg?react";
 import InputSearch from "./core-components/component-book/Input-search";
+import BodyBooks from "./core-components/component-book/Body-books";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
       <Container className="flex flex-col gap-3">
         <Title />
         <InputSearch />
+        <BodyBooks />
       </Container>
 
       {/* <Text variant="body-text-base" className="text-blue">
