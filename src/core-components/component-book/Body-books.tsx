@@ -32,17 +32,23 @@ const books: Book[] = [
     id: "3894240000000",
     titulo: "Anéis",
     autor: "J.R.R. Tolkien",
-    genero: "Fantasia",
+    genero: "Ficção",
     disponivel: true,
   },
 ];
 
 export default function BodyBooks() {
+  function bookRegister() {
+    if (books.length === 0) {
+      return <Text className="text-center text-gray-300 mt-8" variant="body-text-sm">Não há livros cadastrados.</Text>;
+    }
+  }
   return (
     <>
       <div className="flex flex-col gap-3">
+        {bookRegister()}
         {books.map(({ id, titulo, autor, genero, disponivel }) => (
-          <Card className="flex p-2 border-l-4 border-blue" key={id}>
+          <Card className="flex p-3 border-l-4 border-blue" key={id}>
             <div className="flex justify-between items-center w-full">
               <div>
                 <div>
@@ -50,9 +56,9 @@ export default function BodyBooks() {
                     {titulo}
                   </Text>
                 </div>
-                <div>
+                <div className="flex gap-1 items-center">
                   <Text variant="body-text-sm" className="text-gray-300">
-                    {`${autor}  `}  
+                    {`${autor}  `}
                   </Text>
                   <span className="text-gray-300 text-base">/</span>
                   <Text className="text-gray-300">{`  ${genero}`}</Text>

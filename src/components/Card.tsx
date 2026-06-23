@@ -3,7 +3,7 @@ import React from "react";
 
 export const cardVariants = cva(
   `
-    rounded-lg bg-gray-500
+    rounded-lg border-1 border-gray-500
     `,
   {
     variants: {
