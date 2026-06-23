@@ -14,6 +14,7 @@ import Book from "../src/assets/icons/book.svg?react";
 import Handshake from "./assets/icons/handshake.svg?react";
 import InputSearch from "./core-components/component-book/Input-search";
 import BodyBooks from "./core-components/component-book/Body-books";
+import ModalRegister from "./core-components/component-book/Modal-register-book";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Title />
         <InputSearch />
         <BodyBooks />
+        <ModalRegister />
       </Container>
 
       {/* <Text variant="body-text-base" className="text-blue">
