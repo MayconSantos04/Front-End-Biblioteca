@@ -13,7 +13,7 @@ interface Book {
   disponivel: boolean;
 }
 
-const books: Book[] = [
+export const books: Book[] = [
   {
     id: "1717005420000000",
     titulo: "O Senhor dos Anéis",
@@ -58,10 +58,10 @@ export default function BodyBooks() {
                 </div>
                 <div className="flex gap-1 items-center">
                   <Text variant="body-text-sm" className="text-gray-300">
-                    {`${autor}  `}
+                    {`${autor}`}
                   </Text>
                   <span className="text-gray-300 text-base">/</span>
-                  <Text className="text-gray-300">{`  ${genero}`}</Text>
+                  <Text className="text-gray-300">{`${genero}`}</Text>
                 </div>
               </div>
               <div className="flex gap-2 items-center">

@@ -1,7 +1,7 @@
-import { cva, type VariantProps, cx } from "class-variance-authority";
+import Icon from "./Icon";
 import type React from "react";
 import { textVariants } from "./Text";
-import Icon from "./Icon";
+import { cva, type VariantProps, cx } from "class-variance-authority";
 
 export const inputTextVariants = cva(
   `

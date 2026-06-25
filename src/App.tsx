@@ -15,6 +15,7 @@ import Handshake from "./assets/icons/handshake.svg?react";
 import InputSearch from "./core-components/component-book/Input-search";
 import BodyBooks from "./core-components/component-book/Body-books";
 import ModalRegister from "./core-components/component-book/Modal-register-book";
+import OptionGenero from "./core-components/component-book/Option-genero";
 
 export default function App() {
   return (
@@ -23,8 +24,8 @@ export default function App() {
       <Container className="flex flex-col gap-3">
         <Title />
         <InputSearch />
+        <OptionGenero />
         <BodyBooks />
-        <ModalRegister />
       </Container>
 
       {/* <Text variant="body-text-base" className="text-blue">
