@@ -1,4 +1,5 @@
 import { useState } from "react";
+import InputSearch from "./Input-search";
 import Text from "../../components/Text";
 import Card from "../../components/Card";
 import Badge from "../../components/Badge";
@@ -24,6 +25,13 @@ export const books: Book[] = [
     disponivel: true,
   },
   {
+    id: "1717233432420000000",
+    titulo: "Jaimiro",
+    autor: "Carlos Novato",
+    genero: "Fantasia",
+    disponivel: true,
+  },
+  {
     id: "1718787000000",
     titulo: "Crime e Castigo",
     autor: "Dostoiévisk",
@@ -41,12 +49,18 @@ export const books: Book[] = [
 
 export default function BodyBooks() {
   const [selectedGenres, setSelectedGenres] = useState("");
+  const [searchBy, setSearchBy] = useState("");
 
-  const availableGenres = [...new Set(books.map((book) => book.genero))];
+  [...new Set(books.map((book) => book.genero))];
 
-  const booksFilters = selectedGenres
-    ? books.filter((book) => book.genero === selectedGenres)
-    : books;
+  const booksFilters = books.filter((book) => {
+    const matchesGenre = selectedGenres ? book.genero === selectedGenres : true;
+    const matchesSearch = book.titulo
+      .toLowerCase()
+      .includes(searchBy.toLowerCase());
+
+    return matchesGenre && matchesSearch;
+  });
 
   function bookRegister() {
     if (books.length === 0) {
@@ -61,6 +75,7 @@ export default function BodyBooks() {
   return (
     <>
       <div className="flex flex-col gap-3">
+        <InputSearch searchesBy={searchBy} onSearchesChange={setSearchBy} />
         <OptionGenero
           selectedGenre={selectedGenres}
           onGenreChange={setSelectedGenres}

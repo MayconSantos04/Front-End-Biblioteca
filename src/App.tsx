@@ -23,7 +23,6 @@ export default function App() {
       <Header />
       <Container className="flex flex-col gap-3">
         <Title />
-        <InputSearch />
         <BodyBooks />
       </Container>
 
