@@ -1,9 +1,11 @@
-import Card from "../../components/Card";
+import { useState } from "react";
 import Text from "../../components/Text";
-import Pen from "../../assets/icons/pen.svg?react";
-import Trash from "../../assets/icons/trash.svg?react";
-import ButtonIcon from "../../components/Button-icon";
+import Card from "../../components/Card";
 import Badge from "../../components/Badge";
+import OptionGenero from "./Option-genero";
+import Pen from "../../assets/icons/pen.svg?react";
+import ButtonIcon from "../../components/Button-icon";
+import Trash from "../../assets/icons/trash.svg?react";
 
 interface Book {
   id: string;
@@ -38,16 +40,33 @@ export const books: Book[] = [
 ];
 
 export default function BodyBooks() {
+  const [selectedGenres, setSelectedGenres] = useState("");
+
+  const availableGenres = [...new Set(books.map((book) => book.genero))];
+
+  const booksFilters = selectedGenres
+    ? books.filter((book) => book.genero === selectedGenres)
+    : books;
+
   function bookRegister() {
     if (books.length === 0) {
-      return <Text className="text-center text-gray-300 mt-8" variant="body-text-sm">Não há livros cadastrados.</Text>;
+      return (
+        <Text className="text-center text-gray-300 mt-8" variant="body-text-sm">
+          Não há livros cadastrados.
+        </Text>
+      );
     }
   }
+
   return (
     <>
       <div className="flex flex-col gap-3">
+        <OptionGenero
+          selectedGenre={selectedGenres}
+          onGenreChange={setSelectedGenres}
+        />
         {bookRegister()}
-        {books.map(({ id, titulo, autor, genero, disponivel }) => (
+        {booksFilters.map(({ id, titulo, autor, genero, disponivel }) => (
           <Card className="flex p-3 border-l-4 border-blue" key={id}>
             <div className="flex justify-between items-center w-full">
               <div>

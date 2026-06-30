@@ -24,7 +24,6 @@ export default function App() {
       <Container className="flex flex-col gap-3">
         <Title />
         <InputSearch />
-        <OptionGenero />
         <BodyBooks />
       </Container>
 

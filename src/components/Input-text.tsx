@@ -11,7 +11,7 @@ export const inputTextVariants = cva(
   {
     variants: {
       size: {
-        md: "py-2 px-4",
+        md: "py-2 px-9",
       },
     },
     defaultVariants: {
@@ -38,7 +38,7 @@ export default function InputText({
       {IconComponent && (
         <Icon
           svg={IconComponent}
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-2 h-2 fill-gray-300"
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-2 h-2 fill-gray-300"
         />
       )}
       <input
