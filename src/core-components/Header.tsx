@@ -1,8 +1,9 @@
-import Button from "../components/Button";
-import Book from "../assets/icons/book.svg?react";
-import Logo from "../assets/imagens/Logo.png";
-import Handshake from "../assets/icons/handshake.svg?react";
 import { useState } from "react";
+import ScreenBooks from "./ScreenBooks";
+import Button from "../components/Button";
+import Logo from "../assets/imagens/Logo.png";
+import Book from "../assets/icons/book.svg?react";
+import Handshake from "../assets/icons/handshake.svg?react";
 
 export default function Header() {
   const [active, setActive] = useState("livro");
@@ -38,6 +39,7 @@ export default function Header() {
           </div>
         </div>
       </div>
+      {/* <ScreenBooks /> */}
     </div>
   );
 }

@@ -51,8 +51,6 @@ export default function BodyBooks() {
   const [selectedGenres, setSelectedGenres] = useState("");
   const [searchBy, setSearchBy] = useState("");
 
-  [...new Set(books.map((book) => book.genero))];
-
   const booksFilters = books.filter((book) => {
     const matchesGenre = selectedGenres ? book.genero === selectedGenres : true;
     const matchesSearch = book.titulo
