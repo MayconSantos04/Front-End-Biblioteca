@@ -1,12 +1,15 @@
 import { useState } from "react";
-import ScreenBooks from "./ScreenBooks";
-import Button from "../components/Button";
+import ScreenBooks from "./Screen-books";
 import Logo from "../assets/imagens/Logo.png";
-import Book from "../assets/icons/book.svg?react";
-import Handshake from "../assets/icons/handshake.svg?react";
+import ScreenLoans from "./Screen-loans";
+import ButtonToggle from "../components/Button-toggle";
 
 export default function Header() {
-  const [active, setActive] = useState("livro");
+  const [screen, setScreen] = useState("ScreenBooks");
+
+  const handleIsChange = () => {
+    setScreen(screen === "ScreenBooks" ? "ScreenLoans" : "ScreenBooks");
+  };
 
   return (
     <div>
@@ -15,31 +18,13 @@ export default function Header() {
           <div className="m-5">
             <img src={Logo} width={110} alt="Logo" />
           </div>
-
-          <div className="flex items-center justify-center mb-5 md:mb-0">
-            <div className="flex items-center justify-center w-fill md:p-2 gap-3 bg-blue-secondary p-1 rounded-3xl md:rounded-4xl">
-              <Button
-                className="md:px-10 md:py-6 rounded-3xl"
-                onClick={() => setActive("livro")}
-                variant={active === "livro" ? "primary" : "secondary"}
-                icon={Book}
-              >
-                Livro
-              </Button>
-
-              <Button
-                className="md:px-10 md:py-6 rounded-3xl"
-                onClick={() => setActive("emprestimos")}
-                variant={active === "emprestimos" ? "primary" : "secondary"}
-                icon={Handshake}
-              >
-                Empréstimos
-              </Button>
-            </div>
-          </div>
+          <ButtonToggle
+            handleIsChanges={handleIsChange}
+            currentScreen={screen}
+          />
         </div>
       </div>
-      {/* <ScreenBooks /> */}
+      {screen === "ScreenBooks" ? <ScreenBooks /> : <ScreenLoans />}
     </div>
   );
 }
